@@ -25,7 +25,9 @@ class SecretsController < ApplicationController
   # POST /secrets.json
   def create
     @secret = Secret.new(secret_params)
-
+    @secret.splits = ShamirSecretSharing::Base58.split(secret = @secret.exposed_secret,
+                                                       available=@secret.available,
+                                                       needed=@secret.needed)
     respond_to do |format|
       if @secret.save
         format.html { redirect_to @secret, notice: 'Secret was successfully created.' }
@@ -69,6 +71,6 @@ class SecretsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def secret_params
-      params.require(:secret).permit(:description, :available, :needed, :splits)
+      params.require(:secret).permit(:description, :available, :needed, :exposed_secret)
     end
 end
