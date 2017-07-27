@@ -15,6 +15,8 @@ class Secret
   validates :available,
             :needed, numericality: { only_integer: true }
 
+  validates :available, numericality: { less_than_or_equal_to: 250 }
+
   validates :needed, numericality: { less_than_or_equal_to: :available,
                                      message: 'must be less or equal than Available' }
 
