@@ -13,7 +13,7 @@ class SecretsController < ApplicationController
       if @secret.save
         format.js
       else
-        format.html { render :new }
+        format.js
       end
     end
   end
