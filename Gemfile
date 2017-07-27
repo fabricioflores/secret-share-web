@@ -54,3 +54,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'shamir-secret-sharing', :git => 'git://github.com/lian/shamir-secret-sharing.git'
+gem 'virtus'
