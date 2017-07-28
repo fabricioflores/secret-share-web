@@ -1,0 +1,9 @@
+$('.errors').html('');
+$('#revealed-secret').html('');
+
+<%if @merger.errors.any?%>
+  $('.errors').append('<%= j render(:partial => "mergers/errors")%>');
+<%else%>
+  $('#revealed-secret').append('<%= j render(@merger)%>');
+  new Clipboard('.copy-to-clipboard');
+<%end%>

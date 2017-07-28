@@ -1,0 +1,11 @@
+<% if @merger.errors.any? %>
+  <div class="alert alert-danger">
+    <h2><%= pluralize(@merger.errors.count, "error") %> prohibited this merger from being saved:</h2>
+
+    <ul>
+    <% @merger.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

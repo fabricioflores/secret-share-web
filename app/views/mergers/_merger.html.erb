@@ -1,0 +1,11 @@
+<div class="col-md-12 input-group">
+  <input id="exposed-secret"
+         class="form-control"
+         readonly 
+         value="<%=@merger.exposed_secret%>"/>
+  <span class="input-group-btn">
+    <button class="btn btn-default copy-to-clipboard" data-clipboard-target="#exposed-secret">
+        <i class="glyphicon glyphicon-copy"></i>
+    </button>
+  </span>
+</div>

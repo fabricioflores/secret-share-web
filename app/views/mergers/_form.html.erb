@@ -1,0 +1,11 @@
+
+<%= form_for(merger, remote: true)  do |f| %>
+  <div class="form-group">
+    <%= f.label :exposed_secret %>
+    <%= f.text_area :splits, class: "form-control"%>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit "Merge", class: "btn btn-default" %>
+  </div>
+<% end %>
