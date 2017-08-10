@@ -20,7 +20,7 @@ class Secret
   validates :needed, numericality: { less_than_or_equal_to: :available,
                                      message: 'must be less or equal than Available' }
 
-  validates :needed, numericality: { greater_than_or_equal_to: 2 }
+  validates :needed, :available, numericality: { greater_than_or_equal_to: 2 }
 
   def save
     if valid?

@@ -2,7 +2,8 @@
 <%= form_for(merger, remote: true, validate: true)  do |f| %>
   <div class="form-group col-xs-12">
     <%= f.label :splits, class: "control-label" %>
-    <%= f.text_area :splits, class: "form-control"%>
+    <%= f.text_area :splits, class: "form-control",
+                             placeholder: "[\"split1\", \"split2\"]"%>
   </div>
 
   <div class="form-group col-xs-12">
