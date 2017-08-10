@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require clipboard
+//= require rails.validations
 //= require_tree .

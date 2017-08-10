@@ -1,7 +1,7 @@
 
-<%= form_for(merger, remote: true)  do |f| %>
+<%= form_for(merger, remote: true, validate: true)  do |f| %>
   <div class="form-group col-xs-12">
-    <%= f.label :splits %>
+    <%= f.label :splits, class: "control-label" %>
     <%= f.text_area :splits, class: "form-control"%>
   </div>
 
