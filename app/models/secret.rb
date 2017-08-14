@@ -12,6 +12,8 @@ class Secret
             :available,
             :needed, presence: true
 
+  validates :exposed_secret, length: { maximum: 512 }
+
   validates :available,
             :needed, numericality: { only_integer: true }
 
