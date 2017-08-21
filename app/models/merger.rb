@@ -19,7 +19,11 @@ class Merger
 
   def persist!
     self.splits = self.splits.squish.tr('[]', '').delete('\\"').delete(' ').split(',').map(&:to_s)
-    self.exposed_secret = ShamirSecretSharing::Base58.combine(self.splits)
+    if ShamirSecretSharing::Base58.combine(self.splits)
+      self.exposed_secret = ShamirSecretSharing::Base58.combine(self.splits)
+    else
+      self.exposed_secret = "Bad or insufficient input data"
+    end
     true
   end
 end
